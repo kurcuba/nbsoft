@@ -1,0 +1,41 @@
+.error{
+    border: 1px solid red;
+}
+.error-text{
+    color: red;
+    font-style: italic;
+}
+
+/*SLIDER*/
+.slick-arrow{
+    position: absolute;
+}
+.slick-prev, .slick-next{
+    background-color: aliceblue;
+    opacity: 0.6;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    top: 50%;
+    z-index: 1000;
+    border: none;
+}
+.slick-prev{
+    left: 0;
+}
+.slick-next{
+    right: 0;
+}
+.slick-dots{
+    list-style-type: none;
+}
+.slick-dots li{
+    display: inline;
+}
+.slick-dots li button{
+    font-size: 1px;
+    background-color:#00ffff;
+    border: none;
+    width: 25%;
+    margin:0 4%
+}

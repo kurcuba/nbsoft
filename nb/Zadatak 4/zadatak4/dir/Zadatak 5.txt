@@ -1,0 +1,39 @@
+Prva grupa zadataka:
+a)
+SELECT * 
+FROM user
+WHERE dateEdit between day(getdate()) and (day(getdate())-2)
+
+
+b)
+SELECT u.firstname, u.lastname, o.id, sum(o.value) as total
+WHERE user u INNER JOIN order o on u.id=o.userId
+Group by u.firstname, u.lastname, o.id 
+
+
+
+Druga grupa zadataka:
+c)
+SELECT u.* 
+FROM user u inner join order o ON u.id=o.userId 
+WHERE  o.id>2
+
+
+d)
+SELECT u.firstname, u.lastname, o.id, count(or.od)
+FROM user u inner join order o ON u.id=o.userId inner join orderItem or ON o.id=or.orderId
+
+
+e)
+SELECT u.firstname, u.lastname, o.id
+FROM user u inner join order o ON u.id=o.userId inner join orderItem or ON o.id=or.orderId
+WHERE or.id>= 2
+
+
+f)
+SELECT *
+FROM USER u
+WHERE u.id IN (SELECT o.userId
+		FROM ORDER o inner join ORDERITEM oi ON
+	 oi.orderid =o.id
+	WHERE COUNT(DISTINCT(oi.productid)) >= 3)
